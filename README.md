@@ -138,3 +138,11 @@ error = a_vtk_file%finalize()
 ```
 
 Note that all VTKFortran functions return an error code that can be used for sophisticated error trapping algorithms.
+
+### Building VTKFortran
+
+* Clone the repository ```git clone git@github.com:johodges/VTKFortran.git```
+* Navigate into the directoryr ```cd VTKFortran/```
+* Initialize submodules
+```git submodule update --init```
+* Make module ```make```
