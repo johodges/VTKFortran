@@ -145,5 +145,5 @@ Note that all VTKFortran functions return an error code that can be used for sop
 * Navigate into the directoryr ```cd VTKFortran/```
 * Initialize submodules
 ```git submodule update --init```
-* Make module ```make TESTS="yes"```
+* Make module ```make TESTS="yes" MPI="yes"```
 * Run tests ```bash run_tests.sh```
