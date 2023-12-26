@@ -871,7 +871,7 @@ contains
    class(xml_writer_abstract), intent(inout) :: self !< Writer.
    character(*),               intent(in)    :: name !< Tag name.
 
-   self%indent = self%indent - 2
+   !self%indent = self%indent - 2
    self%tag = xml_tag(name=name, indent=self%indent)
    if (.not.self%is_volatile) then
       call self%tag%write(unit=self%xml, iostat=self%error, is_indented=.true., end_record=end_rec, only_end=.true.)
@@ -959,12 +959,12 @@ contains
 
    buffer = ''
    select case(self%topology%chars())
-   case('RectilinearGrid', 'StructuredGrid')
+   case('RectilinearGrid', 'StructuredGrid','ImageData')
       buffer = 'WholeExtent="'//                             &
                trim(str(n=nx1))//' '//trim(str(n=nx2))//' '//&
                trim(str(n=ny1))//' '//trim(str(n=ny2))//' '//&
                trim(str(n=nz1))//' '//trim(str(n=nz2))//'"'
-   case('PRectilinearGrid', 'PStructuredGrid')
+   case('PRectilinearGrid', 'PStructuredGrid','PImageData')
       buffer = 'WholeExtent="'//                             &
                trim(str(n=nx1))//' '//trim(str(n=nx2))//' '//&
                trim(str(n=ny1))//' '//trim(str(n=ny2))//' '//&
